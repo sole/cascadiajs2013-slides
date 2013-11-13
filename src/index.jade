@@ -1,0 +1,152 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Audio Tags: Web Components + Web Audio = ♥
+
+    //- Check out 'src/bower_components/prism/themes/' for available themes
+    link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
+
+    link(rel='stylesheet', type='text/css', href='styles/main.css')
+
+  body
+
+    article
+
+      section
+        h1 Audio Tags:<br />Web Components + Web Audio = ♥ 
+
+      section
+        h2 Soledad Penadés
+        h3.bullet Apps Engineer at <a href="http://mozilla.org">Mozilla</a>
+        ul
+          li @supersole
+          li #apps in irc.mozilla.org
+          li <a href="http://chat.meatspac.es">chat.meatspac.es</a>
+      
+      section
+        h2 I'm totally into music
+        ul
+          li
+          li 200+ songs
+          li Writing audio "toys" for the last 5 years
+
+      section
+        h1 2008
+        h2.bullet Sorollet
+        ul
+          li "Small noise" in Catalan
+          li Pure C
+          li No GUI
+          li The GUI was <em>me</em>
+
+      section
+        h2 Sorollet V1 example TODO
+        h3.bullet Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a>
+        hr
+        code.language-javascript
+          pre.
+            bespoke.horizontal.from('article', {
+              bullets: 'li, .bullet',
+              hash: true,
+              state: true
+            });
+
+
+      section
+        h1 2010
+        h2.bullet Sorollet V2
+        ul
+          li VSTi
+          li C++
+          li I had a GUI!
+
+
+      section
+        img(src='img/sorollet-20100210.png')
+
+
+      section
+        h2 Sorollet V2 example TODO
+        h3.bullet Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a>
+        hr
+        code.language-javascript
+          pre.
+            bespoke.horizontal.from('article', {
+              bullets: 'li, .bullet',
+              hash: true,
+              state: true
+            });
+
+
+      section
+        h1 People used it!
+        h2.bullet 
+        ul
+          li Ubuntu PPA
+          li Fedora
+          li In cool songs! TODO: link to visinin's
+
+
+      section
+        h1 2011
+        h2.bullet Audio in the browser
+        ul
+          li <tt>&lt;audio&gt;</tt> tag hacks
+          li Firefox's <tt>AudioData</tt> (TODO confirm title)
+          li Chrome's Web Audio
+
+      section
+        h1 2013
+        h2.bullet W3C Web Audio API
+        ul
+          li Chrome's API became the standard
+          li Implemented in Firefox too!
+          li It's even in iOS
+          li Chrome mobile TODO (?)
+          li Firefox for Android in the works
+
+
+      section
+        h2 Syntax Highlighting
+        h3.bullet Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a>
+        hr
+        code.language-javascript
+          pre.
+            bespoke.horizontal.from('article', {
+              bullets: 'li, .bullet',
+              hash: true,
+              state: true
+            });
+
+      section(data-bespoke-hash='named-route')
+        h2 Named Route
+        h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-hash">bespoke-hash</a>
+        p Look up! This route has been named with a <em>'data-bespoke-hash'</em> attribute.
+
+      section(data-bespoke-state='emphatic')
+        h2 Emphatic Slide!
+        h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-state">bespoke-state</a>
+
+      section
+        h2.bullet Just the beginning...
+        hr
+        ul
+          li Edit <a href="http://jade-lang.com/">Jade</a> markup in <em>'src/index.jade'</em>
+          li Edit <a href="http://learnboost.github.io/stylus/">Stylus</a> styles in <em>'src/styles/main.styl'</em>
+          li Edit JavaScript in <em>'src/scripts/main.js'</em>
+        hr
+        ul
+          li
+            strong Enjoy! :)
+            a(href='http://twitter.com/markdalgleish')  -@markdalgleish
+
+    script(src='bower_components/bespoke.js/dist/bespoke.min.js')
+    script(src='bower_components/bespoke-bullets/dist/bespoke-bullets.min.js')
+    script(src='bower_components/bespoke-scale/dist/bespoke-scale.min.js')
+    script(src='bower_components/bespoke-hash/dist/bespoke-hash.min.js')
+    script(src='bower_components/bespoke-progress/dist/bespoke-progress.min.js')
+    script(src='bower_components/bespoke-state/dist/bespoke-state.min.js')
+    script(src='bower_components/prism/prism.js')
+    script(src='scripts/main.js')
