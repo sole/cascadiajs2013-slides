@@ -82,7 +82,7 @@ html
 
       section
         h1 People used it!
-        h2.bullet 
+        h2.bullet *\o/*
         ul
           li Ubuntu PPA
           li Fedora
@@ -94,8 +94,19 @@ html
         h2.bullet Audio in the browser
         ul
           li <tt>&lt;audio&gt;</tt> tag hacks
-          li Firefox's <tt>AudioData</tt> (TODO confirm title)
-          li Chrome's Web Audio
+          li Firefox's <strong>AudioData</strong> (TODO confirm title)
+          li Chrome's <strong>Web Audio</strong>
+
+
+      section
+        h1 Audio Data vs Web Audio
+        h2.bullet Why did Web Audio win?
+        ul
+          li Audio Data was 'just a buffer'
+          li Web Audio is modular
+          li ... and includes many useful ready-made units
+          li Plus 3D audio support
+
 
       section
         h1 2013
@@ -106,7 +117,84 @@ html
           li It's even in iOS
           li Chrome mobile TODO (?)
           li Firefox for Android in the works
+          li It's all very <strong>exciting</strong>!
 
+
+      section
+        h1 2013
+        h2.bullet Web Components
+
+
+      section
+        h1.bullet ... but what is a "component"?
+        h2.bullet "A constituent part; element; ingredient."
+
+
+      section
+        h1 Screws
+        img(src='img/screws.jpg')
+
+
+      section
+        h1 Resistors
+        img(src='img/resistors.jpg')
+
+
+      section
+        h1 Doorbell
+        img(src='img/doorbell.jpg')
+
+
+      section
+        h1.bullet Web components
+        h2.bullet == custom DOM elements
+        ul
+          li custom behaviour
+          li custom appearance
+
+      section
+        h1.bullet And here comes the crazy idea...
+        h2.bullet Why not audio components?
+
+
+      section
+        h1.bullet Perfect sense
+        h2.bullet Web Audio is modular
+        h2.bullet Web Components are modular
+
+
+      section
+        h1.bullet Audio Tags
+        h2.bullet Custom audio... 
+          span.bullet with less boilerplate
+
+
+      section
+        h1 Let's build a simple synthesiser
+
+
+      section
+        h1 The audio context
+        
+        code.language-html
+          pre.
+            <audio-context>
+            </audio-context>
+
+      section
+        h1.bullet Oscillator
+        h2.bullet Generates periodic waveforms
+
+
+      section
+        h1 Oscillator
+
+        code.language-html
+          pre.
+            <audio-context>
+              <audio-oscillator>
+              </audio-oscillator>
+            </audio-context>
 
       section
         h2 Syntax Highlighting
