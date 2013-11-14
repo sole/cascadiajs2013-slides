@@ -360,42 +360,76 @@ html
           pre.
             <audio-keyboard octaves="2"></audio-keyboard>
 
-
-
       section
-        h2 Syntax Highlighting
-        h3.bullet Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a>
-        hr
-        code.language-javascript
+        h1 Keyboard events
+        h2 <tt>noteon</tt>
+
+        code.language-js
           pre.
-            bespoke.horizontal.from('article', {
-              bullets: 'li, .bullet',
-              hash: true,
-              state: true
-            });
+            keyboard.addEventListener('noteon', function(e) {
 
-      section(data-bespoke-hash='named-route')
-        h2 Named Route
-        h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-hash">bespoke-hash</a>
-        p Look up! This route has been named with a <em>'data-bespoke-hash'</em> attribute.
+              var noteIndex = e.detail.index;
+              minisynth.noteOn(parseInt(noteIndex, 10) + 40);
+              minisynth.start();
 
-      section(data-bespoke-state='emphatic')
-        h2 Emphatic Slide!
-        h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-state">bespoke-state</a>
+            }, false);
 
       section
-        h2.bullet Just the beginning...
-        hr
-        ul
-          li Edit <a href="http://jade-lang.com/">Jade</a> markup in <em>'src/index.jade'</em>
-          li Edit <a href="http://learnboost.github.io/stylus/">Stylus</a> styles in <em>'src/styles/main.styl'</em>
-          li Edit JavaScript in <em>'src/scripts/main.js'</em>
-        hr
-        ul
-          li
-            strong Enjoy! :)
-            a(href='http://twitter.com/markdalgleish')  -@markdalgleish
+        h1 Keyboard events
+        h2 <tt>noteoff</tt>
 
+        code.language-js
+          pre.
+            keyboard.addEventListener('noteoff', function(e) {
+
+              minisynth.noteOff();
+              
+            }, false);
+
+      section
+        h1 <a href="">DEMO</a> todo
+
+      section
+        h1.bullet Now... 
+          span.bullet we have our instrument
+
+      section
+        h1 We are rockstars!
+
+
+      section
+        h1 And rockstars need to look COOL
+
+
+      section
+        h1.bullet They have signature guitars...
+        h2.bullet We have CSS!!!
+
+
+      section
+        h1.bullet So let's turn our humble synth...
+        h2.bullet into <a href="">a fiery hot object of desire</a> TODO
+
+
+      section
+        h1.bullet Wrap up
+        h2.bullet Audio tags allow you to experiment with Web Audio without drowning in details
+        h3.bullet But this is just a prototype
+
+
+      section
+        h1.bullet Call for forks
+        h2.bullet <a href="https://github.com/sole/audio-tags">github.com/sole/audio-tags</a>
+
+
+      section
+        h1 Thank you!
+        h2 Soledad Penadés
+        h2 @supersole
+        h2 sole@mozilla.com
+
+
+      
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
     script(src='bower_components/bespoke-bullets/dist/bespoke-bullets.min.js')
     script(src='bower_components/bespoke-scale/dist/bespoke-scale.min.js')
