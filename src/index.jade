@@ -30,7 +30,7 @@ html
         h2 I'm totally into music
         ul
           li
-          li 200+ songs
+          li 150+ <a href="http://supersole.net/songs">songs</a>
           li Writing audio "toys" for the last 5 years
 
 
@@ -38,25 +38,27 @@ html
         h1 2008
         h2.bullet Sorollet
         ul
-          li "Small noise" in Catalan
+          li "Tiny noise" in Catalan
           li Pure C
           li No GUI
           li The GUI was <em>me</em>
 
 
       section
-        h2 Sorollet V1 example TODO
-        h3.bullet Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a>
+        h2 Sorollet V1 example
+        h3.bullet (<a href="https://github.com/sole/demoscene/blob/master/releases/xplsv/to_the_beat/src/sorollet.c#L465">fragment</a>)
         hr
-        code.language-javascript
+        code.language-c
           pre.
-            bespoke.horizontal.from('article', {
-              bullets: 'li, .bullet',
-              hash: true,
-              state: true
-            });
+            if(synth->pitch_envelope_active)
+            {
+              actual_note += (int) (map(
+                sorollet_adsr_update(&synth->pitch_envelope, t),
+                0, 1, -12, 12)
+              );
+            }
 
-
+       
       section
         h1 2010
         h2.bullet Sorollet V2
@@ -71,16 +73,18 @@ html
 
 
       section
-        h2 Sorollet V2 example TODO
-        h3.bullet Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a>
+        h2 Sorollet V2 example
+        h3.bullet (<a href="https://github.com/sole/sorollet/blob/master/src/core/SorolletVoice.cpp#L180">fragment</a>)
+
         hr
-        code.language-javascript
+  
+        code.language-c
           pre.
-            bespoke.horizontal.from('article', {
-              bullets: 'li, .bullet',
-              hash: true,
-              state: true
-            });
+            float pitchEnv = mPitchADSR->update(bufferTime);
+
+        hr.bottom
+
+        p <a href="http://supersole.net/song/179-bizarria-sorollosa">my sample song</a>
 
 
       section
@@ -89,7 +93,7 @@ html
         ul
           li Ubuntu PPA
           li Fedora
-          li In cool songs! TODO: link to visinin's
+          li In <a href="https://soundcloud.com/visinin/shiranai-lost-in-london-remix">cool songs</a>!
 
 
       section
@@ -97,7 +101,7 @@ html
         h2.bullet Audio in the browser
         ul
           li <tt>&lt;audio&gt;</tt> tag hacks
-          li Firefox's <strong>AudioData</strong> (TODO confirm title)
+          li Firefox's <strong>AudioData</strong>
           li Chrome's <strong>Web Audio</strong>
 
 
@@ -118,8 +122,8 @@ html
           li Chrome's API became the standard
           li Implemented in Firefox too!
           li It's even in iOS
-          li Chrome mobile TODO (?)
-          li Firefox for Android in the works
+          li Chrome mobile
+          li Firefox for Android: in the works
           li It's all very <strong>exciting</strong>!
 
 
@@ -130,7 +134,7 @@ html
 
       section
         h1.bullet ... but what is a "component"?
-        h2.bullet "A constituent part; element; ingredient."
+        h2.bullet.quote "A constituent part; element; ingredient."
 
 
       section
@@ -154,6 +158,8 @@ html
         ul
           li custom behaviour
           li custom appearance
+          li encapsulation
+          li reusability
 
       section
         h1.bullet And here comes the crazy idea...
@@ -207,7 +213,7 @@ html
 
         hr
 
-        h3 <a href="" target="_blank">example 2</a> TODO try in Firefox stable - why don't links open?
+        h3 <a href="/examples/02_context_oscillator/" target="_blank">Example</a>
 
 
       section
@@ -228,12 +234,12 @@ html
 
         hr
 
-        h3 <a href="" target="_blank">example 3</a>
+        h3 <a href="/examples/03_mixer/" target="_blank">Example</a>
 
 
       section
         h1.bullet Chain
-        h2.bullet Connects the output of each children to the next children
+        h2.bullet Connects the output of each child to the next child
 
 
       section
@@ -250,7 +256,7 @@ html
 
         hr
 
-        h3 <a href="" target="_blank">example 4</a> (TODO remove vumeter)
+        h3 <a href="/examples/04_chain/" target="_blank">Example</a>
 
 
       section
@@ -278,7 +284,7 @@ html
 
         hr
 
-        h3 <a href="" target="_blank">example 5</a>
+        h3 <a href="/examples/05_filter/" target="_blank">Example</a>
 
 
       section
@@ -301,6 +307,25 @@ html
               </audio-mixer>
               <audio-filter type="lowpass"></audio-filter>
             </audio-chain>
+
+
+      section
+        h1 Minisynth
+        h2 With raw Web Audio
+
+        code.language-js
+          pre.
+            var mixerGain = context.createGain();
+
+            var osc1 = context.createOscillator();
+            var osc2 = context.createOscillator();
+            osc1.connect(mixerGain);
+            osc2.connect(mixerGain);
+
+            var filter = context.createBiquadFilter();
+            mixerGain.connect(filter);
+
+            // output is at *filter*
 
 
       section
