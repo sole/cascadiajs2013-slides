@@ -24,13 +24,15 @@ html
           li @supersole
           li #apps in irc.mozilla.org
           li <a href="http://chat.meatspac.es">chat.meatspac.es</a>
-      
+
+
       section
         h2 I'm totally into music
         ul
           li
           li 200+ songs
           li Writing audio "toys" for the last 5 years
+
 
       section
         h1 2008
@@ -40,6 +42,7 @@ html
           li Pure C
           li No GUI
           li The GUI was <em>me</em>
+
 
       section
         h2 Sorollet V1 example TODO
@@ -174,12 +177,18 @@ html
 
 
       section
+        h1.bullet The audio context
+        h2.bullet Where things happen
+
+
+      section
         h1 The audio context
         
         code.language-html
           pre.
             <audio-context>
             </audio-context>
+
 
       section
         h1.bullet Oscillator
@@ -195,6 +204,163 @@ html
               <audio-oscillator>
               </audio-oscillator>
             </audio-context>
+
+        hr
+
+        h3 <a href="" target="_blank">example 2</a> TODO try in Firefox stable - why don't links open?
+
+
+      section
+        h1.bullet Mixer
+        h2.bullet Adds the output of its children into a single output
+
+      section
+        h1 Mixer
+
+        code.language-html
+          pre.
+            <audio-context>
+              <audio-mixer>
+                <audio-oscillator frequency="220"></audio-oscillator>
+                <audio-oscillator frequency="440"></audio-oscillator>
+              </audio-mixer>
+            </audio-context>
+
+        hr
+
+        h3 <a href="" target="_blank">example 3</a>
+
+
+      section
+        h1.bullet Chain
+        h2.bullet Connects the output of each children to the next children
+
+
+      section
+        h1 Chain
+
+        code.language-html
+          pre.
+            <audio-context>
+              <audio-chain>
+                <audio-oscillator frequency="220"></audio-oscillator>
+                <audio-oscilloscope></audio-oscilloscope>
+              </audio-chain>
+            </audio-context>
+
+        hr
+
+        h3 <a href="" target="_blank">example 4</a> (TODO remove vumeter)
+
+
+      section
+        h1.bullet Oscilloscope
+        h2.bullet Displays whatever it's connected to its input
+        h3.bullet The input gets through to the output, unmodified
+
+
+      section
+        h1.bullet Filter
+        h2.bullet Modifies the input by letting some frequencies pass
+
+
+      section
+        h1 Filter
+
+        code.language-html
+          pre.
+            <audio-context>
+              <audio-chain>
+                <audio-oscillator frequency="220"></audio-oscillator>
+                <audio-filter type="lowpass"></audio-filter>
+              </audio-chain>
+            </audio-context>
+
+        hr
+
+        h3 <a href="" target="_blank">example 5</a>
+
+
+      section
+        h1.bullet Minisynth
+        h2.bullet It will have...
+        ul
+          li Two oscillators
+          li A filter
+
+
+      section
+        h1 Minisynth
+
+        code.language-html
+          pre.
+            <audio-chain>
+              <audio-mixer>
+                <audio-oscillator></audio-oscillator>
+                <audio-oscillator></audio-oscillator>
+              </audio-mixer>
+              <audio-filter type="lowpass"></audio-filter>
+            </audio-chain>
+
+
+      section
+        h1 Minisynth
+        h2 <tt>start</tt>
+
+        code.language-javascript
+          pre.
+            start: function(when) {
+              var oscGain = this.oscillators.length > 0 ?
+                1.0 / this.oscillators.length : 1.0;
+              this.oscillators.forEach(function(osc) {
+                  osc.gain = oscGain;
+                  osc.start(when);
+              });
+            }
+
+
+      section
+        h1 Minisynth
+        h2 <tt>stop</tt>
+
+        code.language-javascript
+          pre.
+            stop: function(when) {
+              this.oscillators.forEach(function(osc) {
+                  osc.stop(when);
+              });
+            }
+
+
+      section
+        h1 Minisynth
+        h2 <tt>noteOn</tt>
+
+        code.language-javascript
+          pre.
+            noteOn: function(noteNumber) {
+              this.oscillators.forEach(function(osc, index) {
+                var oscNoteNumber = noteNumber + 12 * index;
+                var frequency = 
+                  MIDIUtils.noteNumberToFrequency(oscNoteNumber);
+                osc.frequency = frequency;
+              });
+            }
+
+
+      section
+        h1.bullet Triggering notes
+        h2.bullet What about a keyboard?
+
+
+      section
+        h1 Keyboard
+        
+        code.language-html
+          pre.
+            <audio-keyboard octaves="2"></audio-keyboard>
+
+
 
       section
         h2 Syntax Highlighting
