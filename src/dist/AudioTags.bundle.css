@@ -1,0 +1,113 @@
+.audio {
+    /*background: #eee;
+    border: 1px solid #333;
+    display: inline-block;
+    padding: 0.1rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);*/
+    font-family: Helvetica, Arial, sans-serif;
+}
+audio-chain {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-left-width: 4px;
+}
+
+audio-chain > * {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+audio-chain > *:last-child {
+    margin: 0;
+}
+
+/*audio-chain {
+    position: relative;
+    display: block;
+    text-align: left;
+    vertical-align: top;
+}
+
+audio-chain > *:after {
+    content: " ⇨ ";
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 3rem;
+    height: 100%;
+    background: #eee;
+    line-height: 100%;
+}
+
+audio-chain > *:last-child:after {
+    background: #ff0;
+    content: none;
+}*/
+audio-context {
+	display: block;
+	border: 1px solid #666;
+    padding: 0.1rem;
+}
+
+audio-context > * {
+    width: 100;
+}
+audio-filter {
+	/*display: inline-block;*/
+}
+audio-keyboard {
+    display: inline-block;
+    border: 10px groove black;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.key {
+    position: relative;
+    font-size: 10px;
+    float: left;
+    border: 1px solid #000;
+    padding: 30px 4px 2px 4px;
+    margin: 0px -1px 0px 0px;
+    cursor: pointer;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.key.black {
+    color: #fff;
+    background-color: #000;
+    padding: 10px 2px 2px 2px;
+    margin: 0px -7px 0px -6px;
+    z-index:2;
+}
+
+.key:hover {
+    background: #f00;
+}
+
+.key:active, .key.active {
+    background: #ff0;
+}
+audio-mixer {
+	display: inline-block;
+	xbackground: #ccc;
+	border: 1px solid #444;
+	border-top-width: 4px;
+}
+
+audio-mixer > * {
+	display: block;
+	border-bottom: 1px solid #ccc;
+	padding: 1rem;
+}
+
+audio-mixer > *:last-child {
+	border: none;
+}
+audio-oscillator {
+}
+
+audio-oscilloscope {
+	display: inline-block;
+}

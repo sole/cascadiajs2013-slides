@@ -88,6 +88,29 @@ html
 
 
       section
+        h2 Sorollet V2 VSTi example
+        h3.bullet (<a href="https://github.com/sole/sorollet/blob/master/src/vsti/SorolletVSTi.cpp#L190">fragment</a>)
+
+        hr
+  
+        code.language-c
+          pre.
+            case PARAM_VOLUME1: vst_strncpy(label, "dB", kVstMaxParamStrLen);
+            break;
+            case PARAM_OCTAVE1: vst_strncpy(label, "Octave", kVstMaxParamStrLen);
+            break;
+            case PARAM_WAVE1: vst_strncpy(label, "Wave", kVstMaxParamStrLen);
+            break;
+            case PARAM_PHASE1: vst_strncpy(label, "", kVstMaxParamStrLen);
+            break;
+            // ...
+
+        hr.bottom
+
+        p Tedious!
+
+
+      section
         h1 People used it!
         h2.bullet *\o/*
         ul
