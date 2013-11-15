@@ -1,6 +1,10 @@
 # Audio Tags: Web Components + Web Audio = ♥
 > Presentation for my CascadiaJS 2013 talk
 
+## View slides online
+
+http://soledadpenades.com/files/t/cascadiajs-audio-tags/
+
 ## View slides locally
 
 First, ensure you have the following installed:
